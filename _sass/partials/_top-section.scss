@@ -15,10 +15,13 @@
     }
 }
 .jumbotron {
+    h1{
+        font-weight: $bold !important;
+    }
     position: relative;
     left: 26px;
     margin: 200px 0 0 0;
-    color: #fff;
+    color: #ea4335;
     background: 0;
     @media (max-width: 767px) {
         left: 13px;

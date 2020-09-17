@@ -48,7 +48,8 @@ layout: compress
     {% if page.permalink == '/' or page.permalink == '/hackathon/' %}
     <script>
         if ($(window).width() > 767) {
-            document.write('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"><\/script>')
+            document.write('<script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqgy1kEcoK52MJF6x-hquuRIhWdL0lthc"><\/script>')
+            // document.write('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"><\/script>')
         } 
     </script>
     {% elsif page.permalink == '/logistics/' %}
@@ -131,6 +132,9 @@ layout: compress
         {% endif %} 
     </script>
     <script src="{{ "/js/scripts.min.js" | prepend: site.baseurl }}"></script>
+    <script>
+        navigator.serviceWorker.register('{{ site.baseurl }}/service-worker.js', {scope: '{{ site.baseurl }}/'});
+    </script>
     {% if page.permalink == '/schedule/' %}
         <script type="text/javascript">
             $(document).ready(function () {
